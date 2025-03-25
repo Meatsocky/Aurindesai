@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="bob.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AurinDesai</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar">
+            <h1 id="font">AurinDesai</h1>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="https://www.instagram.com/crazyexpectations/profilecard/?igsh=MXBqNmF3NHN6bmNrdg==" target="_blank">INSTAGRAM</a></li>
+                <li><a href="https://www.youtube.com/@aurindesai4059" target="_blank">YOUTUBE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="main_con">
+                <div class="right">
+                    <h1 id="font">Hi, Im Aurin Desai</h1>
+                    <p id="font_two">Computer Science Student Focused on Software and AI</p>
+                </div>
+            </div>
+        </main>
+        
+        <div class="about-me-section">
+            <div class="about-me-image">
+                <img src="bg3.jpg" alt="Your Name">
+            </div>
+            <div class="about-me-content">
+                <h1>About Me</h1>
+                <hr>
+                <p>
+                    Hi, I'm Aurin Desai, a second-year Computer Science student at BITS Pilani, Goa. I'm passionate about Artificial Intelligence and software development, with a strong interest in coding languages and problem-solving. I’m constantly learning new technologies and exploring AI's real-world applications. My goal is to deepen my knowledge and contribute to the tech industry through innovative software solutions.<br>
+                    <br><b>Education:</b><br>
+                    -Ramakrishna Madeva Solgaokars Computer techniques<br>
+                    -Bits Pinali(Internation) Bachelors of Science in Computer Science(2nd year in progress)<br><br>
+                    <b>English proficiency course:</b><br>
+                    -Duolingo 110 score<br>
+                    -IELTS 6.0
+                </p>
+            </div>
+        </div>
+
+        <!-- GALLERY_PART -->
+
+        <div class="sec_main">
+            <h1 id="font_two">My Best Websites</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="im1.png" alt="Image 1">
+                    <div class="gallery-overlay">
+                        <p>Website 1</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im2.png" alt="Image 2">
+                    <div class="gallery-overlay">
+                        <p>Website 2</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im3.png" alt="Image 3">
+                    <div class="gallery-overlay">
+                        <p>Website 3</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im4.png" alt="Image 4">
+                    <div class="gallery-overlay">
+                        <p>Website 4</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im5.png" alt="Image 5">
+                    <div class="gallery-overlay">
+                        <p>Website 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im6.png" alt="Image 6">
+                    <div class="gallery-overlay">
+                        <p>Website 6</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im7.png" alt="Image 7">
+                    <div class="gallery-overlay">
+                        <p>Website 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im8.png" alt="Image 8">
+                    <div class="gallery-overlay">
+                        <p>Website 8</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="im9.png" alt="Image 9">
+                    <div class="gallery-overlay">
+                        <p>Website 9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-container">
+            <h1>Python Code Showcase</h1>
+            <div class="code-gallery">
+    
+                <div class="code-card">
+                    <h2>Code 1: Instagram Bot</h2>
+                    <pre>
+                        # Importing all the modules needed
+from instapy import InstaPy # To handle all matters relating to Instagram
+from instapy import smart_run
+import random as r # To add randomness
+import schedule # To schedule bot to run specific times
+import time # To add delays
+
+# Insert your Instagram username, as well as password below
+username = "your_username_here"
+password = "your_password_here"
+
+# Function to handle all the actions the bot will take
+def bot():
+    session = InstaPy(username=username, password=password, headless_browser=False)
+    session.login() # Creating and logging into session
+
+    # Searched for a long time trying to figure out what smart_run does.
+    # If you know what smart_run does please let me know.
+    with smart_run(session):
+        session.like_by_tags(["programming"], amount=50) # Specifying tags to search posts for, to ultimately like them.
+        session.set_do_follow(True, percentage=r.randint(40, 60)) # Setting percent chance that the bot will follow the user.
+        session.set_do_comment(True, percentage=r.randint(10, 30)) # Setting percent chance that the bot will leave a comment on the post.
+        session.set_comments(["Great!", "Love this", "Nice", "I like this", "Liked!"]) # Specifying what the actual comments should be if the bot decides to leave them
+
+# Setting the time at which the bot should run each day (as long as the bot is running)
+schedule.every().day.at(f"09:46").do(bot)
+schedule.every().day.at(f"18:12").do(bot)
+
+# Below loop will check every 15 seconds if there are any pending sessions that the bot needs to do.
+while True:
+    schedule.run_pending()
+    time.sleep(15)
+                    </pre>
+                </div>
+    
+                <div class="code-card">
+                    <h2>Code 2: Phone Number Tracker(outdated)</h2>
+                    <pre>import phonenumbers
+                        from num import number
+                        from phonenumbers import geocoder
+                        import folium
+                        
+                        key = "e409bf59f5ab420d8882a7aa8e97a69e"
+                        
+                        samNumber = phonenumbers.parse(number)
+                        yourLocation = geocoder.description_for_number(samNumber, "en")
+                        print(yourLocation)
+                        
+                        ## service provider
+                        
+                        from phonenumbers import carrier
+                        
+                        service_provider = phonenumbers.parse(number)
+                        print(carrier.name_for_number(service_provider, "en"))
+                        
+                        ##locations
+                        
+                        from opencage.geocoder import OpenCageGeocode
+                        
+                        geocoder = OpenCageGeocode(key)
+                        
+                        query = str(yourLocation)
+                        
+                        results = geocoder.geocode(query)
+                        #print(results)
+                        
+                        
+                        lat = results[0]["geometry"]["lat"]
+                        lng = results[0]["geometry"]["lng"]
+                        
+                        print(lat, lng)
+                        
+                        myMap = folium.Map(location=[lat, lng], zoom_start = 9)
+                        
+                        folium.Marker([lat, lng],popup = yourLocation).add_to((myMap))
+                        
+                        ##save map in html files
+                        
+                        myMap.save("myLocation.html")
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="blender-showcase-container">
+            <h1>Blender Files Showcase</h1>
+            <div class="blender-gallery">
+        
+                <div class="blender-card">
+                    <img src="donut.png" alt="Blender File 1 Preview">
+                    <h2>SpongeBob: 3D Character Model</h2>
+                    <p>This is a detailed SpongeBob character model created in Blender.</p>
+                    <a href="https://drive.google.com/file/d/1IF63sVYslEO7imlMHMUUFf8vwYFVGGxo/view?usp=drive_link" download>Download File</a>
+                </div>
+        
+                <div class="blender-card">
+                    <img src="bob.png" alt="Blender File 2 Preview">
+                    <h2>A Donut</h2>
+                    <p>A high-poly model of a nice donut ready for rendering or animation.</p>
+                    <a href="https://drive.google.com/file/d/1hggSg2uoVBsiAHdbGQFML6PiTQ_BNIoz/view?usp=drive_link" download>Download File</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <h1>My Skill Set</h1>
+    
+            <div class="skill">
+                <h3>HTML & CSS <span>100%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress html-css"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <h3>Python <span>35%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress python"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <h3>C & C++ <span>40%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress c-cpp"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <h3>JavaScript <span>90%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress javascript"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <h3>Java <span>50%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress java"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <h3>Database <span>100%</span></h3>
+                <div class="skill-bar">
+                    <div class="progress database"></div>
+                </div>
+            </div>
+    
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div id="link" class="footer-section links">
+                    <h2>Contacts</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Goa, India</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 9834958361</li>
+                        <li><i class="fas fa-envelope"></i> Aurindesai@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> Crazyexpectations@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Crazyexpectations | Designed by Aurin Desai
+            </div>
+        </footer>
+        
+    </header>
+    <script src="https://kit.fontawesome.com/e50099774e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
